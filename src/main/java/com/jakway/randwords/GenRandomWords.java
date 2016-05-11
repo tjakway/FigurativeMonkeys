@@ -69,11 +69,7 @@ class WordGenerator implements Runnable
         }
 
         //need to manually check at the end in case we have any left over
-        if(localCount >= UPDATE_INTERVAL)
-        {
-            counter.add(localCount);
-            localCount = 0;
-        }
+        counter.add(localCount);
     }
 }
 
