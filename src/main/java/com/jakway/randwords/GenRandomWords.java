@@ -1,4 +1,4 @@
-package com.jakway.randwords
+package com.jakway.randwords;
 
 //#1: read in all the words
 //#2: find the longest word
@@ -9,4 +9,15 @@ package com.jakway.randwords
 //#7: find percent of words generated in X number of 
 
 
+public class GenRandomWords
+{
+    public static final String[] readAllWords(File path)
+    {
 
+    }
+
+    public static void main(String[] args)
+    {
+        
+    }
+}
