@@ -13,9 +13,9 @@ task wrapper(type: Wrapper) {
 //create a single Jar with all dependencies
 task fatJar(type: Jar) {
 	manifest {
-        attributes 'Implementation-Title': 'Gradle Jar File Example',  
+        attributes 'Implementation-Title': 'GenRandomWords',  
         	'Implementation-Version': version,
-        	'Main-Class': 'com.mkyong.DateUtils'
+        	'Main-Class': 'com.jakway.randwords.GenRandomWords'
     }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
