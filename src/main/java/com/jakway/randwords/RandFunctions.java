@@ -9,6 +9,16 @@ public class RandFunctions
     static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'";
     private Random rnd = new Random();
 
+    /**
+     * (inclusive)
+     */
+    private int getRandInRange(int min, int max)
+    {
+        //see http://stackoverflow.com/questions/363681/generating-random-integers-in-a-specific-range
+        //add 1 to make it inclusive
+        return min + rnd.nextInt(max - min + 1);
+    }
+
     public RandFunctions()
     {
     	
@@ -16,8 +26,12 @@ public class RandFunctions
     /**
      * see http://stackoverflow.com/questions/11677670/when-exactly-are-we-supposed-to-use-public-static-final-string
      */
-    public String randomString( int len )
+    public String randomString( int maxLen )
     {
+        //the length of the generated string is randomly generated
+        final int minLength = 1; // no zero length strings
+        final int len = getRandInRange(minLength, maxLen);
+
         StringBuilder sb = new StringBuilder( len );
 
         //add the first character manually to ensure the string is at least 1 character long
