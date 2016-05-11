@@ -85,14 +85,14 @@ public class GenRandomWords
 
     public static void main(String[] args) throws Exception
     {
-        if(args.length != 2)
+        if(args.length != 1)
         {
             System.err.println("USAGE: [numToGenerate]");
             System.exit(1);
         }
         
         //will throw a NumberFormatException if the string is not numeric
-        final long numToGenerate = Long.parseLong(args[1]);
+        final long numToGenerate = Long.parseLong(args[0]);
 
 
         //read in the words set
