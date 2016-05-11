@@ -1,6 +1,4 @@
-#include <iostream>
-
-#define WORDS_PATH "/usr/share/dict/words"
+package com.jakway.randwords
 
 //#1: read in all the words
 //#2: find the longest word
@@ -9,3 +7,6 @@
 //#5: check if it's a word
 //#6: log count
 //#7: find percent of words generated in X number of 
+
+
+
