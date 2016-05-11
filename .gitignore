@@ -1,0 +1,23 @@
+*.class
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+#gradle
+#gradle cach
+.gradle
+#gradle build dir
+build/
+
+#ignore vim swap files
+*.swp
+bin/
+
+#ignore eclipse project files
+#generated with the eclipse gradle plugin
+.project
+.settings/
+.classpath
+
+#ignore ctags output
+tags
