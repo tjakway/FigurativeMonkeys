@@ -8,12 +8,14 @@ package com.jakway.randwords;
 //#6: log count
 //#7: find percent of words generated in X number of 
 
+import java.io.File;
+
 
 public class GenRandomWords
 {
     public static final String[] readAllWords(File path)
     {
-
+        return null;
     }
 
     public static void main(String[] args)
