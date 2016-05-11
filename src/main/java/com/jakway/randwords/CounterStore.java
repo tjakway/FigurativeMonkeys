@@ -14,4 +14,9 @@ public class CounterStore
     {
         validWordCount.addAndGet(delta);
     }
+
+    public synchronized long get()
+    {
+        return validWordCount.get();
+    }
 }
