@@ -125,7 +125,7 @@ public class GenRandomWords
 
     private static void printResults(long numToGenerate, CounterStore counter)
     {
-        final double percent = (counter.get() / numToGenerate) * 100;
+        final double percent = (((double)counter.get()) / ((double)numToGenerate)) * 100;
         System.out.println("Out of "+numToGenerate+" generated strings, "+counter.get()+" were valid words ("+percent+"%).");
     }
 }
