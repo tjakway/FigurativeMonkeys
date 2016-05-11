@@ -25,6 +25,7 @@ class WordGenerator implements Runnable
     private Set<String> words;
     private CounterStore counter;
     private long numToGenerate;
+    private RandFunctions randFuncs = new RandFunctions();
 
     /**
      * @param words
@@ -53,7 +54,7 @@ class WordGenerator implements Runnable
         for(long i = 0; i < numToGenerate; i++)
         {
             //the actual work--generate a random string of the correct length and see if it's a word
-            String randStr = RandFunctions.randomString(maxWordLength);
+            String randStr = randFuncs.randomString(maxWordLength);
             if(words.contains(randStr))
             {
                 localCount++;
@@ -102,11 +103,18 @@ public class GenRandomWords
         //run as many threads as available processors
         final int numProcessors = Runtime.getRuntime().availableProcessors();        
 
+        final long numPerThread = numToGenerate / numProcessors;
+
         //launch the threads
         threads = new Thread[numProcessors];
         for(int i = 0; i < threads.length; i++)
         {
-            threads[i] = new Thread(new WordGenerator(allWords, counter, numToGenerate));
+            threads[i] = new Thread(new WordGenerator(allWords, counter, numPerThread));
+        }
+        //launch all the threads
+        for(Thread thisThread : threads)
+        {
+            thisThread.start();
         }
 
         //wait for all threads to finish their work

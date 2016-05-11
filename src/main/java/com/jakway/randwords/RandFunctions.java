@@ -7,12 +7,16 @@ public class RandFunctions
 {
     /** includes apostrophes */
     static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'";
-    static Random rnd = new Random();
+    private Random rnd = new Random();
 
+    public RandFunctions()
+    {
+    	
+    }
     /**
      * see http://stackoverflow.com/questions/11677670/when-exactly-are-we-supposed-to-use-public-static-final-string
      */
-    public static String randomString( int len )
+    public String randomString( int len )
     {
         StringBuilder sb = new StringBuilder( len );
 
