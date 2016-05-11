@@ -38,7 +38,7 @@ class WordGenerator implements Runnable
         this.numToGenerate = numToGenerate;
 
         //since the set of words is immutable we only have to do this once
-        if(maxWordLength != 0)
+        if(maxWordLength <= 0)
         {
             maxWordLength = RandFunctions.findLongestWordLength(words);
         }
