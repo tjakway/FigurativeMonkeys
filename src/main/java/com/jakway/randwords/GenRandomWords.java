@@ -11,6 +11,15 @@ package com.jakway.randwords;
 import java.io.File;
 
 
+
+class WordGenerator
+{
+    private static final int UPDATE_INTERVAL = 10000;
+
+    
+}
+
+
 public class GenRandomWords
 {
     public static final String[] readAllWords(File path)
