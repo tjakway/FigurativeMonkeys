@@ -77,15 +77,25 @@ class WordGenerator implements Runnable
 public class GenRandomWords
 {
     /** path to the English dictionary */
-    private static final File WORDS_PATH = new File("/usr/share/dict/words");
+    private static File WORDS_PATH = new File("/usr/share/dict/words");
     private static Thread[] threads;
 
     public static void main(String[] args) throws Exception
     {
-        if(args.length != 1)
+        if(args.length < 1 || args.length > 2)
         {
-            System.err.println("USAGE: [numToGenerate]");
+            System.err.println("USAGE: [numToGenerate] [optional: path to words file]");
             System.exit(1);
+        }
+
+        if(args.length == 2)
+        {
+            WORDS_PATH = new File(args[1]);
+            if(!WORDS_PATH.exists())
+            {
+                System.err.println("Passed words file " + WORDS_PATH.toString() + " does not exist!");
+                System.exit(1);
+            }
         }
         
         //will throw a NumberFormatException if the string is not numeric
