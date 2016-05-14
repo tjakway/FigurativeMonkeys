@@ -11,13 +11,13 @@ task wrapper(type: Wrapper) {
 
 //see http://www.mkyong.com/gradle/gradle-create-a-jar-file-with-dependencies/
 //create a single Jar with all dependencies
-task fatJar(type: Jar) {
+task standaloneJar(type: Jar) {
 	manifest {
         attributes 'Implementation-Title': 'GenRandomWords',  
         	'Implementation-Version': version,
         	'Main-Class': 'com.jakway.randwords.GenRandomWords'
     }
-    baseName = project.name + '-all'
+    baseName = project.name + '-standalone'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
