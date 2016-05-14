@@ -6,7 +6,7 @@ import java.util.Set;
 public class RandFunctions
 {
     /** includes apostrophes */
-    static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'";
+    static final String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'";
     private Random rnd = new Random();
 
     /**
